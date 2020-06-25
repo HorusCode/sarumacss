@@ -1,0 +1,28 @@
+{
+  "name": "saruma",
+  "version": "1.0.0",
+  "description": "Saruma is a young and modern CSS Framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HorusCode/sarumacss.git"
+  },
+  "author": "Ilnaz Fattahov (horusdev)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HorusCode/sarumacss/issues"
+  },
+  "homepage": "https://github.com/HorusCode/sarumacss#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}
