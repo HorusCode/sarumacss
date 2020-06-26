@@ -1,0 +1,79 @@
+.table-wrapper {
+  margin: 30px 0;
+  border-radius: .4em;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  @extend .shadow-1;
+}
+
+.table-header {
+  position: sticky;
+  top:0;
+  padding: $margin-gap;
+  background-color: white;
+  border-radius: 3px 3px 0 0;
+  z-index: 1;
+  @extend .shadow-1;
+}
+
+
+.table {
+  min-width: 100%; // adjust to your needs
+  background: $table-bg;
+  color: $text-color;
+  th {
+    display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!
+  }
+
+  tbody > tr > td {
+    border-top: 1px solid #ddd;
+  }
+
+  tbody tr:nth-of-type(odd) {
+    background-color: darken($table-bg, 4%);
+  }
+
+  td {
+    display: block;
+
+    &:first-child {
+      padding-top: .5em;
+    }
+
+    &:last-child {
+      padding-bottom: .5em;
+    }
+
+    &:before {
+      content: attr(data-th) ": "; // who knew you could do this? The internet, that's who.
+      font-weight: bold;
+
+      // optional stuff to make it look nicer
+      width: 6.5em; // magic number :( adjust according to your own content
+      display: inline-block;
+      // end options
+
+      @media (min-width: $breakpoint-phone) {
+        display: none;
+      }
+    }
+  }
+
+  th, td {
+    margin: .5em 1em;
+    text-align: center;
+    @media (min-width: $breakpoint-phone) {
+      display: table-cell;
+      padding: 1em .5em;
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+    &:before {
+      color: #dd5;
+    }
+  }
+
+
+}

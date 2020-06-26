@@ -1,0 +1,168 @@
+.select {
+  display: inline-block;
+  width: 300px;
+  height: 50px;
+  position: relative;
+  border-radius: 5px;
+  @include box();
+  &__button {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    padding: 12px 14px;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+.chevrons {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  i {
+    color: #d1dede;
+  }
+}
+
+.options-view-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+  &:checked ~ .options .option i {
+    display: block;
+    padding: 12px 0;
+  }
+  &:checked ~ .options .label {
+    display: block;
+    padding: 12px 0;
+  }
+}
+
+
+.option i {
+  width: 16px;
+  height: 16px;
+}
+
+
+
+
+
+
+.options {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: inherit;
+  margin: 0 auto;
+  background-color: #fff;
+  @include box();
+  border-radius: 4px;
+  .option {
+    position: relative;
+    line-height: 1;
+    transition: 0.3s ease all;
+    z-index: 2;
+    color: #2d3667;
+    font-size: 16px;
+    .label {
+      display: none;
+      padding: 0;
+      margin-left: 15px;
+      transition: 0.3s ease all;
+    }
+  }
+}
+
+
+.option i {
+  position: absolute;
+  left: 14px;
+  padding: 0;
+  display: none;
+}
+
+
+
+.opt-val {
+  position: absolute;
+  left: 14px;
+  width: 217px;
+  height: 21px;
+  opacity: 0;
+  background-color: #fff;
+  transform: scale(0);
+}
+
+.option-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 40px;
+  transition: 0.3s ease all;
+  z-index: 1;
+  display: none;
+}
+
+
+.option:hover .label {
+  color: red;
+}
+
+
+.option .option__radio :checked ~ .opt-val {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.option .option__radio :checked ~ i {
+  top: 0;
+  bottom: auto;
+  opacity: 1;
+  animation: unset;
+}
+
+.option .option__radio:checked ~ i,
+.option .option__radio:checked ~ .label {
+  color: blue;
+}
+
+.option .option__radio:checked ~ .label:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.options-view-button:not(:checked) ~ .options .option .option__radio:checked ~ .opt-val {
+  top: -30px;
+}
+
+.option__radio {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+

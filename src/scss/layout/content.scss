@@ -1,0 +1,14 @@
+.content {
+  display: grid;
+  grid-area: c;
+  @include box();
+  margin: 0 $margin-gap;
+  grid-template-rows: 5rem 1fr;
+  &__header {
+    padding: $content-padding;
+    align-self: center;
+  }
+  &__body {
+    padding: $content-padding;
+  }
+}

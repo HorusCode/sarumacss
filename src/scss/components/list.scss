@@ -1,0 +1,118 @@
+.vertical-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__heading {
+    text-transform: uppercase;
+    font-size: .7438rem;
+    margin: 1rem 0;
+    color: $primary;
+    white-space: nowrap;
+  }
+
+  &__item > a {
+    display: block;
+    line-height: 2.5rem;
+    height: 2.5rem;
+    padding: 0 1.5rem 0 1.95rem;
+    position: relative;
+    border-radius: .35rem;
+    color: #6c757d;
+    white-space: nowrap;
+    transition: all .2s;
+    margin: .1rem 0;
+  }
+
+  .pos-left {
+    left: 0;
+  }
+
+  .pos-right {
+    right: 0;
+  }
+}
+
+.submenu {
+  transition: padding 300ms;
+  padding: 0 .5rem;
+
+  &.collapse {
+    height: 0;
+    overflow: hidden;
+  }
+
+
+  &__item > a {
+    display: block;
+    color: #6c757d;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    padding: 0 2.25rem 0;
+    border-radius: 50px;
+    margin: 0;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      left: 20px;
+      top: 50%;
+      margin-top: -2px;
+      content: '';
+      background: $primary;
+      border-radius: 50%;
+    }
+
+    &:hover {
+      color: $primary;
+    }
+
+    &.active {
+      background-color: $primary;
+      color: #fff;
+    }
+
+    &.active::before {
+      background: #fff;
+    }
+  }
+}
+
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  &-item {
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    margin-bottom: -1px;
+  }
+
+  &-content {
+    display: flex;
+    position: relative;
+    align-items: center
+  }
+
+  &-content-right {
+    margin-left: auto;
+  }
+
+  &-content-right {
+    margin-left: auto;
+  }
+
+  .item-icon {
+    font-size: 2.5rem;
+  }
+
+  .list-heading {
+    font-size: 1.1rem;
+  }
+}

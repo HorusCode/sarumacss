@@ -1,0 +1,150 @@
+@mixin gradientBg($direction, $startColor, $endColor) {
+  background: $startColor;
+  background: linear-gradient($direction, $startColor 0%, $endColor 80%, $endColor 100%);
+}
+
+
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: auto;
+  margin: .4rem;
+  padding: .55rem 1rem;
+  border: 1px solid transparent;
+  border-radius: $radius-general;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 3px 5px 0 #0000003b;
+  @include button-color($grey);
+
+  &.btn-primary {
+    @include button-color($primary);
+  }
+
+  &.btn-secondary {
+    @include button-color($secondary)
+  }
+
+  &.btn-success {
+    @include button-color($success);
+  }
+
+  &.btn-default {
+    @include button-color($grey);
+  }
+
+  &.btn-warning {
+    @include button-color($warning);
+  }
+
+  &.btn-info {
+    @include button-color($info);
+  }
+
+  &.btn-danger {
+    @include button-color($danger);
+  }
+
+
+  &.btn-primary-outline {
+    @include button-outlined($primary);
+  }
+
+  &.btn-secondary-outline {
+    @include button-outlined($secondary)
+  }
+
+  &.btn-success-outline {
+    @include button-outlined($success);
+  }
+
+  &.btn-default-outline {
+    @include button-outlined($grey);
+  }
+
+  &.btn-warning-outline {
+    @include button-outlined($warning);
+  }
+
+  &.btn-info-text{
+    @include button-outlined($info);
+  }
+
+  &.btn-danger-text {
+    @include button-outlined($danger);
+  }
+
+  &.btn-primary-text {
+    @include button-text($primary);
+  }
+
+  &.btn-secondary-text {
+    @include button-text($secondary)
+  }
+
+  &.btn-success-text {
+    @include button-text($success);
+  }
+
+  &.btn-default-text {
+    @include button-text($grey);
+  }
+
+  &.btn-warning-text {
+    @include button-text($warning);
+  }
+
+  &.btn-info-text {
+    @include button-text($info);
+  }
+
+  &.btn-danger-text {
+    @include button-text($danger);
+  }
+
+
+  &:disabled {
+    background-color: $muted;
+    opacity: .3;
+    transition: none;
+    cursor: default;
+    &:hover {
+      background-color: $muted;
+    }
+
+  }
+
+  &.is-small {
+    padding: .5rem 1rem !important;
+    font-size: small;
+  }
+
+  &.is-large {
+    font-size: small + 2;
+    padding: .8rem 1rem !important;
+  }
+
+  &.is-extended {
+    width: 100%;
+  }
+
+  &.ripple {
+    border-radius: 50%;
+    padding: 0.55rem .645rem;;
+    letter-spacing: normal;
+  }
+  &.rounded {
+    border-radius: 25px;
+  }
+  &.width-1 {
+    width: 9rem;
+  }
+}
+

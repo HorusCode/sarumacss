@@ -1,0 +1,11 @@
+.footer {
+  height: 4rem;
+  display: flex;
+  max-width: 100%;
+  grid-area: f;
+  align-self: end;
+  padding: 0 $margin-gap;
+  align-items: center;
+  @include box(top);
+  border-radius: 0;
+}

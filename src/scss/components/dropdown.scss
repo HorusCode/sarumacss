@@ -1,0 +1,19 @@
+//Надо что-бы родитель был с относительным позиционированием
+.dropdown-menu {
+  position: absolute;
+  z-index: 2;
+  top: calc(100% + 10px);
+  width: 100%;
+  padding: .5em 1em;
+  @include box();
+  &__item {
+    padding: .5em;
+    margin-bottom: .3em;
+    &.active, &:not(.disable):hover {
+      cursor: pointer;
+      background-color: $primary;
+      color: white;
+      border-radius: 4px;
+    }
+  }
+}

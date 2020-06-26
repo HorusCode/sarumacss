@@ -1,0 +1,12 @@
+.v-divider {
+  align-self: stretch;
+  display: inline-flex;
+  height: inherit;
+  min-height: 100%;
+  max-height: 100%;
+  max-width: 0px;
+  width: 0px;
+  vertical-align: text-bottom;
+  border: 0 solid $border-color;
+  border-right-width: thin;
+}

@@ -1,0 +1,15 @@
+.header {
+  height: 64px;
+  display: flex;
+  max-width: 100%;
+  grid-area: h;
+  padding: 0 $margin-gap;
+  align-items: center;
+  @include box();
+  border-radius: 0;
+}
+.header-items {
+  display: flex;
+  .header-item:first-child > .btn {margin-left: 0}
+  .header-item:last-child > .btn {margin-right: 0}
+}
