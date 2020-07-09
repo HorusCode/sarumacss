@@ -5,7 +5,6 @@
   padding: 1em;
   color: white;
   border-radius: 5px;
-  @extend .shadow-1;
   &.--primary {
     background-color: $primary;
   }

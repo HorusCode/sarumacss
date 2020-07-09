@@ -5,11 +5,13 @@
   grid-area: h;
   padding: 0 $margin-gap;
   align-items: center;
-  @include box();
+
   border-radius: 0;
-}
-.header-items {
-  display: flex;
-  .header-item:first-child > .btn {margin-left: 0}
-  .header-item:last-child > .btn {margin-right: 0}
+  &__items {
+    display: flex;
+  }
+  &__item {
+    &:first-child > .btn {margin-left: 0}
+    &:last-child  > .btn {margin-right: 0}
+  }
 }

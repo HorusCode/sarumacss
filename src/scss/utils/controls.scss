@@ -9,7 +9,7 @@ $control-line-height: 1.5 !default;
 $control-padding-vertical: calc(0.5em - #{$control-border-width}) !default;
 $control-padding-horizontal: calc(0.75em - #{$control-border-width}) !default;
 
-=control {
+@mixin control {
    align-items: center;
   border: $control-border-width solid transparent;
   border-radius: $control-radius;
@@ -35,17 +35,17 @@ $control-padding-horizontal: calc(0.75em - #{$control-border-width}) !default;
   }
 }
 %control {
-+ control
+  @include control;
 }
 
 // The controls sizes use mixins so they can be used at different breakpoints
-=control-small {
+@mixin control-small {
    border-radius: $control-radius-small;
    font-size: $size-small;
  }
-=control-medium {
+@mixin control-medium {
    font-size: $size-medium;
  }
-=control-large {
+@mixin control-large {
    font-size: $size-large;
  }

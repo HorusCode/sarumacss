@@ -35,18 +35,18 @@ $weight-light: 300 !default;
 $weight-normal: 400 !default;
 $weight-medium: 500 !default;
 $weight-semibold: 600 !default;
-$weight-bold: 700 !default;// Spacing
+$weight-bold: 700 !default; // Spacing
 
 $block-spacing: 1.5rem !default// Responsiveness
 
 // The container horizontal gap, which acts as the offset for breakpoints
-$gap: 32px !default;// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
-$tablet: 769px !default;// 960px container + 4rem
-$desktop: 960px + (2 * $gap) !default;// 1152px container + 4rem
+$gap: 32px !default; // 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$tablet: 769px !default; // 960px container + 4rem
+$desktop: 960px + (2 * $gap) !default; // 1152px container + 4rem
 $widescreen: 1152px + (2 * $gap) !default;
-$widescreen-enabled: true !default;// 1344px container + 4rem
+$widescreen-enabled: true !default; // 1344px container + 4rem
 $fullhd: 1344px + (2 * $gap) !default;
-$fullhd-enabled: true !default;// Miscellaneous
+$fullhd-enabled: true !default; // Miscellaneous
 
 $easing: ease-out !default;
 $radius-small: 2px !default;
@@ -160,30 +160,94 @@ $custom-colors: null !default;
 $custom-shades: null !default;
 
 $colors: mergeColorMaps(
-("white" : ($white, $black),
-"black" : ($black, $white),
-"light" : ($light, $light-invert),
-"dark" : ($dark, $dark-invert),
-"primary": ($primary, $primary-invert, $primary-light, $primary-dark),
-"link" : ($link, $link-invert, $link-light, $link-dark),
-"info" : ($info, $info-invert, $info-light, $info-dark),
-"success": ($success, $success-invert, $success-light, $success-dark),
-"warning": ($warning, $warning-invert, $warning-light, $warning-dark),
-"danger" : ($danger, $danger-invert, $danger-light, $danger-dark)),
-$custom-colors
+                ("white" : ($white, $black),
+                        "black" : ($black, $white),
+                        "light" : ($light, $light-invert),
+                        "dark" : ($dark, $dark-invert),
+                        "primary": ($primary, $primary-invert, $primary-light, $primary-dark),
+                        "link" : ($link, $link-invert, $link-light, $link-dark),
+                        "info" : ($info, $info-invert, $info-light, $info-dark),
+                        "success": ($success, $success-invert, $success-light, $success-dark),
+                        "warning": ($warning, $warning-invert, $warning-light, $warning-dark),
+                        "danger" : ($danger, $danger-invert, $danger-light, $danger-dark)),
+                $custom-colors
 ) !default;
 
 $shades: mergeColorMaps(
-("black-bis" : $black-bis,
-"black-ter" : $black-ter,
-"grey-darker" : $grey-darker,
-"grey-dark" : $grey-dark,
-"grey" : $grey,
-"grey-light" : $grey-light,
-"grey-lighter": $grey-lighter,
-"white-ter" : $white-ter,
-"white-bis" : $white-bis),
-$custom-shades
+                ("black-bis" : $black-bis,
+                        "black-ter" : $black-ter,
+                        "grey-darker" : $grey-darker,
+                        "grey-dark" : $grey-dark,
+                        "grey" : $grey,
+                        "grey-light" : $grey-light,
+                        "grey-lighter": $grey-lighter,
+                        "white-ter" : $white-ter,
+                        "white-bis" : $white-bis),
+                $custom-shades
 ) !default;
 
 $sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7 !default;
+
+
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: 'Ubuntu', sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.6;
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #694ad3;
+$pink: #f66d9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+$muted: #818181;
+$grey: #535252;
+$white: #fff;
+// Border color
+$border-color: rgba(0, 0, 0, 0.14);
+$radius-general: 3px;
+
+
+
+$grid-gap: 2rem;
+$margin-gap: 1.4rem;
+$content-padding: 0 2rem;
+
+
+
+$text-color: darken($grey, 15%);
+
+
+
+$primary: $purple;
+$secondary: $cyan;
+$success: $green;
+$danger: $red;
+$warning: $orange;
+$info: $blue;
+
+
+$link: $primary;
+
+
+//Breakpoints
+$breakpoint-phone: 480px;
+
+
+$input-bg: #e6e6e6;
+$table-bg: #f6f6f6;
+
+
+//Spinner
+$basic-spinner-dimensions: 64px; //width and height of spinner
+$main-spinner-dimensions: $basic-spinner-dimensions - 2px * 2; //width and height of bigger circle
+$small-spinner-dimensions: $main-spinner-dimensions * 0.7; //width and height of smaller circle
+$spinner-color: $primary;

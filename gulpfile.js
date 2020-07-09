@@ -6,34 +6,37 @@ const del = require('del');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 
+sass.compiler = require('node-sass');
 
-//Таск на стили CSS
-function styles() {
-    return gulp.src('./src/scss/saruma.scss')
+
+gulp.task('scss', function (done) {
+    gulp.src('./src/scss/saruma.scss')
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./build/css'))
         .pipe(browserSync.stream());
-}
+    done();
+});
 
-//Удалить всё в указанной папке
-function clean() {
-    return del(['build/*'])
-}
 
-//Просматривать файлы
-function watch() {
+
+gulp.task('clear', function (done) {
+    del(['build/*']);
+    done();
+});
+
+
+gulp.task('watch', function (done) {
     browserSync.init({
-        server: {
-            baseDir: "./"
-        }
+        server: "./",
+        port: 3000
     });
-    //Следить за CSS файлами
-    gulp.watch('./srs/scss/**/*.scss', styles)
-    //При изменении HTML запустить синхронизацию
+    gulp.watch('./src/scss/**/*.scss', gulp.parallel('scss'));
     gulp.watch("./*.html").on('change', browserSync.reload);
-}
-gulp.task('watch', watch);
-gulp.task('build', gulp.series(clean, styles));
+});
+
+
+
+gulp.task('build', gulp.series('clear', 'scss'));
 gulp.task('dev', gulp.series('build','watch'));

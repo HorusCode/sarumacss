@@ -5,7 +5,7 @@
   top: calc(100% + 10px);
   width: 100%;
   padding: .5em 1em;
-  @include box();
+
   &__item {
     padding: .5em;
     margin-bottom: .3em;
